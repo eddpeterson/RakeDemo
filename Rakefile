@@ -1,3 +1,4 @@
+namespace :morning do
   task :turn_off_alarm do
     puts "Turned off alarm. Would have liked 5 more minutes, though."
   end
@@ -20,4 +21,4 @@
   task :ready_for_the_day => [:turn_off_alarm, :groom_myself, :make_coffee, :walk_dog] do
     puts "Ready for the day!"
   end
-
+end

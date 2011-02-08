@@ -9,9 +9,20 @@ end
 rake turn_off_alarm
 
 # 4. run taks that runs other taks
+# add tasks to Rakefile
+task :ready_for_the_day => [:turn_off_alarm, :groom_myself, :make_coffee, :walk_dog] do
+  puts "Ready for the day!"
+end
+# run taks from cmd
 rake ready_for_the_day
 
 # 5. passing in values to rake task from command line 
 rake COFFEE_CUPS=5 make_coffee
 
+# 6. Rake supports the concept of namespaces which essentially lets you group together similar tasks inside of one namespace
+namespace :morning do
+    task :turn_of_alarm
+    ....
+end
+rake COFFEE_CUPS=5 morning:ready_for_the_day
 
