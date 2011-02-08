@@ -26,3 +26,8 @@ namespace :morning do
 end
 rake COFFEE_CUPS=5 morning:ready_for_the_day
 
+# 7. Rake default task
+task :default => 'morning:turn_off_alarm'
+# now you can run simply rake on command line
+rake
+

@@ -22,3 +22,5 @@ namespace :morning do
     puts "Ready for the day!"
   end
 end
+
+task :default => 'morning:turn_off_alarm'
