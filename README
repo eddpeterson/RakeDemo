@@ -8,4 +8,10 @@ end
 # 3. run rake task
 rake turn_off_alarm
 
+# 4. run taks that runs other taks
+rake ready_for_the_day
+
+# 5. passing in values to rake task from command line 
+rake COFFEE_CUPS=5 make_coffee
+
 
