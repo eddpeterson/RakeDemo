@@ -39,3 +39,14 @@ task :make_coffee do
 end
 # view from command line list of rake tasks
 rake -T
+
+# 9. Invoking tasks
+namespace :afternoon do
+  desc "make coffe on afternoon"
+  task :make_coffee do
+    Rake::Task['morning:make_coffee'].invoke
+    puts "Ready for the rest of the day!"
+  end
+end
+# run rake from cmd line
+rake afternoon:make_coffee COFFEE_CUPS=13
