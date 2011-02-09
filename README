@@ -31,3 +31,11 @@ task :default => 'morning:turn_off_alarm'
 # now you can run simply rake on command line
 rake
 
+# 8. Add desc to use rake -T command for listing all the tasks
+desc "make coffee"
+task :make_coffee do
+  cups = ENV["COFFEE_CUPS"] || 2
+  puts "Made #{cups} cups of coffee. Shakes are gone."
+end
+# view from command line list of rake tasks
+rake -T
