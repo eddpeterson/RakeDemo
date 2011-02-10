@@ -50,3 +50,10 @@ namespace :afternoon do
 end
 # run rake from cmd line
 rake afternoon:make_coffee COFFEE_CUPS=13
+
+# You can get access to your models, and in fact, your whole environment by making tasks dependent on the environment task. This lets you do things like run rake RAILS_ENV=staging db:migrate. Rails will autmatically pick up tasks in lib/tasks. Any files named with the .rake extension will get picked up when you do rake -T
+
+# Scheduling Rake Tasks
+# You can use cron to schedule rake tasks. Let’s say you wanted to run the account email expiration task every night at 12:15 on your production server, you might have something like this:
+15 * * * * cd /data/my_app/current && /usr/bin/rake RAILS_ENV=production accounts:email_expiring
+
